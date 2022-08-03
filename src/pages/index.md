@@ -1,3 +1,3 @@
 ---
-testimmagine: test
+testimmagine: /img/icon.png
 ---
