@@ -1,0 +1,31 @@
+{
+  "name": "infopoint-totem-slideshow",
+  "version": "1.0.0",
+  "private": true,
+  "description": "infopoint-totem-slideshow",
+  "author": "emanuele-em",
+  "keywords": [
+    "gatsby"
+  ],
+  "scripts": {
+    "develop": "gatsby develop",
+    "start": "gatsby develop",
+    "build": "gatsby build",
+    "serve": "gatsby serve",
+    "clean": "gatsby clean"
+  },
+  "dependencies": {
+    "babel-plugin-styled-components": "^2.0.7",
+    "gatsby": "^4.20.0",
+    "gatsby-plugin-image": "^2.20.0",
+    "gatsby-plugin-netlify-cms": "^6.20.0",
+    "gatsby-plugin-sharp": "^4.20.0",
+    "gatsby-plugin-styled-components": "^5.20.0",
+    "gatsby-source-filesystem": "^4.20.0",
+    "gatsby-transformer-sharp": "^4.20.0",
+    "netlify-cms-app": "^2.15.72",
+    "react": "^18.1.0",
+    "react-dom": "^18.1.0",
+    "styled-components": "^5.3.5"
+  }
+}
