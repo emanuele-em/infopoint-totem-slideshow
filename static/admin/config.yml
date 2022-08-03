@@ -16,4 +16,4 @@ collections:
           preview: false
         name: "index"
         fields:
-          - {label: "Testimmagine", name: "testimmagine", widget: "string"}
+          - {label: "Testimmagine", name: "testimmagine", widget: "image"}
