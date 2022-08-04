@@ -1,5 +1,4 @@
 ---
-testimmagine: /img/icon.png
 slideshow:
   - duration: 2
     start: August 12, 2022 12:01 AM
