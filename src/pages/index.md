@@ -1,6 +1,7 @@
 ---
+testimmagine: /img/icon.png
 slideshow:
-  - duration: 2
+  - duration: 3
     start: August 11, 2022 12:01 AM
     end: August 15, 2022 12:01 AM
     slide: /img/icon.png
