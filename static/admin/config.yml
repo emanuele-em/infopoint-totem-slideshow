@@ -16,4 +16,12 @@ collections:
           preview: false
         name: "index"
         fields:
-          - {label: "Testimmagine", name: "testimmagine", widget: "image"}
+          - label: "Slideshow"
+            name: "slideshow"
+            widget: "list"
+            summary: '{{image.slide}}'
+            fields: 
+              - {label: "Immagine o Video", name: "slide", widget: "file", hint: "Seleziona un'immagine o un video da mostrare"}
+              - {label: "Inizio", name: "start", widget: "datetime", date_format: "DD.MM.YYYY", time_format: "HH:mm", format: "LLL", hint: "Seleziona data ora a partire dai quali la slide **inizierá** ad essere visibile"}
+              - {label: "Fine", name: "end", widget: "datetime", date_format: "DD.MM.YYYY", time_format: "HH:mm", format: "LLL", hint: "Seleziona data ora a partire dai quali la slide **smetterá** di essere visibile"}
+              - {label: "Durata Slide (secondi)", name: "duration", widget: "number", default: 2, hint: "La durata indica il tempo in questa slide resterá visibile, deve essere specificata in **secondi**. Se il file selezionato è un video questo campo verrá ignorato e il video verrá mostrato per l'intera durata."}
