@@ -1,7 +1,11 @@
 ---
 slideshow:
   - duration: 2
-    start: August 5, 2022 11:42 PM
-    end: August 24, 2022 11:42 PM
+    start: August 6, 2022 12:14 AM
+    end: August 6, 2022 12:14 AM
+    slide: /img/bestbion2.jpg
+  - duration: 2
+    start: August 6, 2022 12:14 AM
+    end: August 6, 2022 12:14 AM
     slide: /img/icon.png
 ---
