@@ -21,7 +21,6 @@ collections:
             widget: "list"
             summary: '{{fields.slide}}'
             collapsed: true
-
             fields: 
               - {label: "Immagine o Video", name: "slide", widget: "file", hint: "Seleziona un'immagine o un video da mostrare"}
               - {label: "Inizio", name: "start", widget: "datetime", date_format: "DD.MM.YYYY", time_format: "HH:mm", format: "LLL", hint: "Seleziona data ora a partire dai quali la slide **inizierá** ad essere visibile"}
