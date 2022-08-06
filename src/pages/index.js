@@ -48,7 +48,6 @@ const IndexPage = ({ data }) => {
           autoplaySpeed={speed}
           pauseOnHover={false}
           afterChange={handleAfterChange}
-          // beforeChange={updateList}
         >
           {
             slideshow
