@@ -2,8 +2,7 @@ import React, { useState } from 'react'
 import {Link, graphql} from 'gatsby'
 import {GatsbyImage, getImage } from "gatsby-plugin-image";
 import Layout from "../components/Layout"
-import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
-import { Carousel } from 'react-responsive-carousel';
+import Slider from "react-slick";
 
 /* -------------------------------------------------------------------------- */
 /*                                  functions                                 */
@@ -23,28 +22,23 @@ const checkWindowSize = () => {
 const IndexPage = ({data}) => {
   const [intervalz, setIntervalz] = useState(3000); //initial state here represents the interval for first image.
 
-  const onChange = (index, item) => {
-    if(Date.now() > Date.parse(item.props["data-end"])/1000 || Date.now() > Date.parse(item.props["data-start"])/1000)
-      setIntervalz(0);
-    else
+  const handleAfterChange = (index, item) => {
+    // if(Date.now() > Date.parse(item.props["data-end"])/1000 || Date.now() > Date.parse(item.props["data-start"])/1000)
+    //   setIntervalz(0);
+    // else
       setIntervalz(item.props["data-interval"]);
   };
 
   const slideshow = data.allMarkdownRemark.edges[0].node.frontmatter.slideshow;
   console.log(slideshow);
-  console.log(Date.now());
-
+    var settings = {
+      dots: true
+    };
 
 
   return (
     <Layout>
-      <Carousel
-        onChange={onChange}
-        autoPlay
-        interval={intervalz}
-        infiniteLoop={true}
-        showThumbs={false}
-      >
+      <Slider {...settings}>
         {slideshow.map((item) => (
           <div key={item.slide.id} data-interval={item.duration*1000} data-start={item.start} data-end={item.end}>
             <GatsbyImage image={getImage(item.slide)} alt="" />
@@ -52,7 +46,7 @@ const IndexPage = ({data}) => {
 
         ))
         }
-      </Carousel>
+      </Slider>
     </Layout>
   )
 }
