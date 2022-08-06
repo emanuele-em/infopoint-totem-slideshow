@@ -42,7 +42,7 @@ const IndexPage = ({data}) => {
         showThumbs={false}
       >
         {slideshow.map((item) => (
-          <div key={item.slide.id} data-interval={item.duration*1000}>
+          <div key={item.slide.id} data-interval={item.duration*1000} data-start={item.start} data-end={end}>
             <GatsbyImage image={getImage(item.slide)} alt="" />
           </div>
 
