@@ -3,8 +3,8 @@ import {Link, graphql} from 'gatsby'
 import {GatsbyImage, getImage } from "gatsby-plugin-image";
 import Layout from "../components/Layout"
 import Slider from "react-slick";
-import "~slick-carousel/slick/slick.css"; 
-import "~slick-carousel/slick/slick-theme.css";
+import "slick-carousel/slick/slick.css"; 
+import "slick-carousel/slick/slick-theme.css";
 
 /* -------------------------------------------------------------------------- */
 /*                                  functions                                 */
@@ -34,7 +34,13 @@ const IndexPage = ({data}) => {
   const slideshow = data.allMarkdownRemark.edges[0].node.frontmatter.slideshow;
   console.log(slideshow);
     var settings = {
-      dots: true
+      dots: false,
+      autoplay: true,
+      infinite: true,
+      arrow: false,
+      autoplaySpeed: {intervalz}
+
+
     };
 
 
