@@ -24,7 +24,7 @@ const IndexPage = ({data}) => {
   const [intervalz, setIntervalz] = useState(3000); //initial state here represents the interval for first image.
 
   const onChange = (index, item) => {
-    if(Date.now() > item.props["data-end"] || Date.now() > item.props["data-start"])
+    if(Date.now() > Date.parse(item.props["data-end"])/1000 || Date.now() > Date.parse(item.props["data-start"])/1000)
       setIntervalz(0);
     else
       setIntervalz(item.props["data-interval"]);
@@ -32,6 +32,7 @@ const IndexPage = ({data}) => {
 
   const slideshow = data.allMarkdownRemark.edges[0].node.frontmatter.slideshow;
   console.log(slideshow);
+  console.log(Date.now());
 
 
 
