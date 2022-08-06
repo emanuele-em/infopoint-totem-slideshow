@@ -10,9 +10,8 @@ import "slick-carousel/slick/slick-theme.css";
 /*                                  functions                                 */
 /* -------------------------------------------------------------------------- */
 
-const checkWindowSize = () => {
-  alert("test");
-  return;
+function isImage(url) {
+  return /\.(jpg|jpeg|png|webp|avif|gif|svg)$/.test(url);
 }
 
 
@@ -55,10 +54,11 @@ const IndexPage = ({ data }) => {
                 return (Date.parse(item.start) < Date.now() && Date.parse(item.end) > Date.now());
               })
               .map((item) => (
-                <div key={item.slide.id} interval={item.duration * 1000} data-start={item.start} data-end={item.end}>
-                  {(getImage(item.slide) !== 'undefined')
-                    ? <GatsbyImage image={getImage(item.slide)} alt="" />
-                    : <video autoplay src={item.slide.publicUrl} />
+                <div key={item.slide} interval={item.duration * 1000} data-start={item.start} data-end={item.end}>
+                  {
+                  isImage(item.slide)
+                    ? <img src={item.slide} alt="" />
+                    : <video autoplay src={item.slide} />
                   }
                 </div>
 
@@ -86,12 +86,7 @@ export const pageQuery = graphql`
                     duration
                     end
                     start
-                    slide {
-                      publicUrl
-                      childImageSharp {
-                        gatsbyImageData(layout: FIXED)
-                      }
-                    }
+                    slide
                   }
                 }
               }
