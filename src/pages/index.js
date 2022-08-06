@@ -22,33 +22,33 @@ const checkWindowSize = () => {
 /* -------------------------------------------------------------------------- */
 
 const IndexPage = ({data}) => {
-  const [intervalz, setIntervalz] = useState(3000); //initial state here represents the interval for first image.
+  const slideshow = data.allMarkdownRemark.edges[0].node.frontmatter.slideshow;
+  const [speed, setSpeed] = useState(3000); //initial state here represents the interval for first image.
 
-  const handleAfterChange = (index, item) => {
-    // if(Date.now() > Date.parse(item.props["data-end"])/1000 || Date.now() > Date.parse(item.props["data-start"])/1000)
-    //   setIntervalz(0);
-    // else
-      setIntervalz(item.props["data-interval"]);
+  const handleAfterChange = (slide) => {
+      setSpeed(slideshow[slide].duration*1000);//controllo che corrisponda a quello giusto
   };
 
-  const slideshow = data.allMarkdownRemark.edges[0].node.frontmatter.slideshow;
-  console.log(slideshow);
-    var settings = {
-      dots: false,
-      autoplay: true,
-      infinite: true,
-      arrow: false,
-      autoplaySpeed: {intervalz}
-
-
-    };
-
+  const handleBeforeChange = (slide) => {
+      const start = Date.parse(slideshow[slide].start)/1000;
+      const end = Date.parse(slideshow[slide].end)/1000;
+      console.log(Date.now()+" corrisponde ad ora mentre "+start+" Corrisponde all inziio")
+  };
 
   return (
     <Layout>
-      <Slider {...settings}>
+      <Slider
+        dots={false}
+        autoplay={true}
+        infinite={true}
+        arrow={false}
+        autoplaySpeed= {speed}
+        pauseOnHover={false}
+        afterChange={handleAfterChange}
+        beforeChange={handleBeforeChange}
+      >
         {slideshow.map((item) => (
-          <div key={item.slide.id} data-interval={item.duration*1000} data-start={item.start} data-end={item.end}>
+          <div key={item.slide.id} interval={item.duration*1000} data-start={item.start} data-end={item.end}>
             <GatsbyImage image={getImage(item.slide)} alt="" />
           </div>
 
