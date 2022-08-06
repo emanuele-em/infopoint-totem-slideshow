@@ -28,7 +28,7 @@ const IndexPage = ({ data }) => {
   const sliderRef = useRef();
   const handleAfterChange = (slide) => {
     setSpeed(slideshow[slide].duration * 1000);//controllo che corrisponda a quello giusto
-    if(slide==0)
+    if (slide == 0)
       setTimestamp(Date.now());
   };
 
@@ -56,7 +56,10 @@ const IndexPage = ({ data }) => {
               })
               .map((item) => (
                 <div key={item.slide.id} interval={item.duration * 1000} data-start={item.start} data-end={item.end}>
-                  <GatsbyImage image={getImage(item.slide)} alt="" />
+                  {(getImage(item.slide) !== 'undefined')
+                    ? <GatsbyImage image={getImage(item.slide)} alt="" />
+                    : <video autoplay src={item.slide.publicUrl} />
+                  }
                 </div>
 
               ))
@@ -76,23 +79,23 @@ export default IndexPage
 export const pageQuery = graphql`
         query slideShow {
           allMarkdownRemark {
-          edges {
-          node {
-          frontmatter {
-          slideshow {
-          duration
-            end
-        start
-        slide {
-          childImageSharp {
-          gatsbyImageData(layout: FIXED)
+            edges {
+              node {
+                frontmatter {
+                  slideshow {
+                    duration
+                    end
+                    start
+                    slide {
+                      publicUrl
+                      childImageSharp {
+                        gatsbyImageData(layout: FIXED)
+                      }
+                    }
+                  }
+                }
               }
-        id
             }
           }
         }
-      }
-    }
-  }
-}
         `;
