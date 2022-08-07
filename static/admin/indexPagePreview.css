@@ -81,13 +81,13 @@ h1{
     margin:5px 0;
 }
 
-p.warning, p.online{
+p.hidden, p.online{
     font-weight: bold;
     text-transform: uppercase;
     font-size:.8rem;
 }
 
-p.warning{
+p.hidden{
     color:#b00020;
 }
 
