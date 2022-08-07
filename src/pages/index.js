@@ -10,16 +10,22 @@ import "slick-carousel/slick/slick-theme.css";
 /*                                    style                                   */
 /* -------------------------------------------------------------------------- */
 
+
 const Slide = styled.div`
   height:100vh;
-  width: 100vw;
+  width: 100vw !important;
   padding:0;
+  margin:auto;
   overflow:hidden;
-  display:flex;
+  display:flex!important;
   justify-content: center;
   align-items:center;
+  box-sizing: border-box;
+  position:relative;
+  background: black;
 
-  & > img, & > video{
+  &  img, &  video{
+    height:100%;
     max-height:100%;
     max-width:100%;
   }
@@ -48,15 +54,12 @@ const IndexPage = ({ data }) => {
   const slideshow = data.allMarkdownRemark.edges[0].node.frontmatter.slideshow;
   const [speed, setSpeed] = useState(3000); //initial state here represents the interval for first image.
   const [timestamp, setTimestamp] = useState(Date.now());
-  const [len, setLen] = useState(0);
   const sliderRef = useRef();
 
   /* -------------------------------------------------------------------------- */
-  const handleAfterChange = (slide) => { //just after transition, current slide si hte one just displayed
-    //console.log(sliderRef.current.innerSlider.list.querySelector(`[data-index="${slide}"]`).querySelector(`video`));
+  const handleAfterChange = (slide) => { 
     const videoElement = sliderRef.current.innerSlider.list.querySelector(`[data-index="${slide}"]`).querySelector(`video`);
     if(videoElement != null) {
-      //then is a video
       videoElement.play();
       setSpeed(videoElement.duration*1000);
     } else{
@@ -66,16 +69,10 @@ const IndexPage = ({ data }) => {
 
   /* -------------------------------------------------------------------------- */
   const handleBeforeChange = (slide) => {
-    
-    const last = slideshow.filter(onlyDisplaySlide).length-1;
-    //console.log("slide is "+slide+" and last is "+last);
-    if (slide == last)
-      setTimestamp(Date.now());
+    // if (slide === last)
+    //   setTimestamp(Date.now());
   }
-  /* -------------------------------------------------------------------------- */
-  // const handleMetadata = e => {
-  //   setSpeed(e.currentTarget.duration * 1000);
-  // }
+
 
   return (
     <Layout>
@@ -90,21 +87,18 @@ const IndexPage = ({ data }) => {
           autoplaySpeed={speed}
           pauseOnHover={false}
           afterChange={handleAfterChange}
-          beforeChange={handleBeforeChange}
+          //beforeChange={handleBeforeChange}
         >
           {
             slideshow
             .filter(onlyDisplaySlide)
             .map((item) => {
               return (
-                <Slide key={item.slide} interval={item.duration * 1000} data-start={item.start} data-end={item.end}>
+                <Slide key={item.slide} interval={/* item.duration */2000 * 1000} data-start={item.start} data-end={item.end}>
                   {
-                    (isImage(item.slide))
-                      ? <img src={item.slide} alt="" />
-                      : <video muted playsInline src={item.slide} />
+                    (isImage(item.slide)) ? <img src={item.slide} alt=""/> : <video muted playsInline src={item.slide}/>
                   }
                 </Slide>
-
               )
             })
             

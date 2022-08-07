@@ -1,13 +1,21 @@
 import React from "react"
-import styled from "styled-components";
+import { createGlobalStyle } from "styled-components";
 
-const Slideshow = styled.div`
+const GlobalStyle = createGlobalStyle`
+  body,html {
+    margin:0;
+    padding:0;
+    height:100vh;
+    width: 100vw;
+    overflow: hidden;
+  }
 `
 
 export default function Layout({ children }) {
   return (
-    <Slideshow>
+    <>
+    <GlobalStyle />
       {children}
-    </Slideshow>
+    </>
   )
 }
