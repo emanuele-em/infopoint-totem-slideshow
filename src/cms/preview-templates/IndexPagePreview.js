@@ -25,6 +25,7 @@ const IndexPagePreview = ({ entry, getAsset }) => {
                         .map((item) => { 
                             const start = new Date(item.start);
                             const end = new Date(item.end);
+                            const hidden = (Date.now>end || Date.now < start) ? 1 : 0;
                             count++;                          
                             return (
                                 <div class="container">
@@ -38,6 +39,7 @@ const IndexPagePreview = ({ entry, getAsset }) => {
                                         <p><b>Durata</b>: {item.duration} secondi</p>
                                         <p><b>Data inizio</b>: {start.toLocaleString("it-IT")}</p>
                                         <p><b>Data fine</b>: {end.toLocaleString("it-IT")}</p>
+                                        <p class={hidden ? "hidden" : "online"}>{hidden ? "Pubblicato" : "Nascosto"}</p>
                                     </div>
                                 </div>
                             )

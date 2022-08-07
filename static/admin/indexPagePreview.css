@@ -81,4 +81,17 @@ h1{
     margin:5px 0;
 }
 
+p.warning, p.online{
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size:.8rem;
+}
+
+p.warning{
+    color:#b00020;
+}
+
+p.online{
+    color: #0067af;
+}
 
