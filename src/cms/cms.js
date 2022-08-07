@@ -4,5 +4,5 @@ import IndexPagePreview from './preview-templates/IndexPagePreview'
 
 CMS.registerLocale('it', it);
 
-CMS.registerPreviewStyle('./preview-templates/style.css', {raw: true});
+CMS.registerPreviewStyle('/admin/indexPagePreview.css');
 CMS.registerPreviewTemplate('index', IndexPagePreview)

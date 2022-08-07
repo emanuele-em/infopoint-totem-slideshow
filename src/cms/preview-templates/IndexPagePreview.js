@@ -11,25 +11,33 @@ function isImage(url) {
 
 const IndexPagePreview = ({ entry, getAsset }) => {
     const data = entry.getIn(['data']).toJS();
-    console.log(data.slideshow);
-
+    let count = 0;
     if (data) {
         return (
             <>
+                <div id="containerLogo">
+                    <img src="/img/logo-evolutha.png" />
+                </div>
+
+                <h1>Anteprima Presentazione</h1>
                 {
                     data.slideshow
-                        .map((item) => {
+                        .map((item) => { 
+                            const start = new Date(item.start);
+                            const end = new Date(item.end);
+                            count++;                          
                             return (
                                 <div class="container">
                                     <div class="containerMedia">
+                                        <div class="numeration">{count}</div>
                                         {
                                             (isImage(item.slide)) ? <img src={item.slide} alt="" /> : <video autoPlay muted playsInline src={item.slide} />
                                         }
                                     </div>
                                     <div class="description">
-                                        <p>{item.duration}</p>
-                                        <p>{item.start}</p>
-                                        <p>{item.end}</p>
+                                        <p><b>Durata</b>: {item.duration} secondi</p>
+                                        <p><b>Data inizio</b>: {start.toLocaleString("it-IT")}</p>
+                                        <p><b>Data fine</b>: {end.toLocaleString("it-IT")}</p>
                                     </div>
                                 </div>
                             )
