@@ -7,7 +7,11 @@
 .container > .containerMedia{
     width: 150px;
     background:red;
+    overflow:hidden;
+      position:relative;
 }
-
+    .containerMedia img, .containerMedia video{
+            width:100%;
+    }
 
 
