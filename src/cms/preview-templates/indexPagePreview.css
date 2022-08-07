@@ -1,0 +1,13 @@
+.container{
+    display: flex;
+    justify-content: flex-start;
+    align-items:center;
+}
+
+.container > .containerMedia{
+    width: 150px;
+    background:red;
+}
+
+
+

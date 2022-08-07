@@ -5,6 +5,7 @@ backend:
 media_folder: static/img
 public_folder: /img
 logo_url: https://images.squarespace-cdn.com/content/v1/5b7980cc8ab722614fde37b7/1543591794826-A64J66UBV7QVAQB8ZKQ9/EVOLUTHA-2018-ok.png?format=1500w
+locale: 'it'
 
 collections:
   - name: "totem"
@@ -13,7 +14,7 @@ collections:
       - file: "src/pages/index.md"
         label: "Fotografie Slide"
         editor:
-          preview: false
+          preview: true
         name: "index"
         fields:
           - label: "Slideshow"
@@ -22,7 +23,7 @@ collections:
             summary: '{{fields.slide}}'
             collapsed: true
             fields: 
-              - {label: "Immagine o Video", name: "slide", widget: "file", hint: "Seleziona un'immagine o un video da mostrare"}
+              - {label: "Immagine o Video", name: "slide", widget: "file", hint: "Seleziona un'immagine o un video da mostrare", pattern: ['([^\\s]+(\\.(?i)(jpg|jpeg|png|webp|avif|gif|svg|jfif|avi|flv|mpe?g|rm|mov|wav|asf|3gp|mkv|rmvb|mp4))$)', "Il file caricato deve essere un video o un'immagine con uno dei seguenti formati: jpg, jpeg, png, webp, avif, gif, svg, jfif, avi, flv, mpe?g, rm, mov, wav, asf, 3gp, mkv, rmvb, mp4"]}
               - {label: "Inizio", name: "start", widget: "datetime", date_format: "DD.MM.YYYY", time_format: "HH:mm", format: "LLL", hint: "Seleziona data ora a partire dai quali la slide **inizierá** ad essere visibile"}
               - {label: "Fine", name: "end", widget: "datetime", date_format: "DD.MM.YYYY", time_format: "HH:mm", format: "LLL", hint: "Seleziona data ora a partire dai quali la slide **smetterá** di essere visibile"}
               - {label: "Durata Slide (secondi)", name: "duration", widget: "number", default: 2, hint: "La durata indica il tempo in questa slide resterá visibile, deve essere specificata in **secondi**. Se il file selezionato è un video questo campo verrá ignorato e il video verrá mostrato per l'intera durata."}
