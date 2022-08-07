@@ -3,7 +3,6 @@ slideshow:
   - duration: 2
     start: August 6, 2022 10:25 PM
     end: August 16, 2022 10:18 PM
-<<<<<<< HEAD
     slide: /img/icon.png
   - duration: 5
     start: August 6, 2022 10:17 PM
@@ -17,7 +16,5 @@ slideshow:
     start: August 7, 2022 8:50 AM
     end: August 7, 2022 9:45 AM
     slide: /img/developer.jpg
-=======
-    slide: /img/images-backgrounds-nature-1920x1080-wallpaper-preview.jpg
->>>>>>> 99beec2665bee6ce5bd1661d78f48b05b4297552
+
 ---
