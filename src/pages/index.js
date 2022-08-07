@@ -7,6 +7,12 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
 /* -------------------------------------------------------------------------- */
+/*                                    style                                   */
+/* -------------------------------------------------------------------------- */
+
+
+
+/* -------------------------------------------------------------------------- */
 /*                                  functions                                 */
 /* -------------------------------------------------------------------------- */
 
@@ -27,13 +33,18 @@ const IndexPage = ({ data }) => {
   const sliderRef = useRef();
   const handleAfterChange = (slide) => {
     setSpeed(slideshow[slide].duration * 1000);//controllo che corrisponda a quello giusto
-    if (slide == 0)
-      setTimestamp(Date.now());
   };
 
-
-
-
+  /* -------------------------------------------------------------------------- */
+  const handleBeforeChange = (slide) => {
+    console.log("slide value: " + slide + " slideshow lenght valu: " + slideshow.length);
+    if (slide == slideshow.length - 1)
+      setTimestamp(Date.now());
+  }
+  /* -------------------------------------------------------------------------- */
+  const handleMetadata = e => {
+    setSpeed(e.currentTarget.duration * 1000);
+  }
 
   return (
     <Layout>
@@ -47,6 +58,7 @@ const IndexPage = ({ data }) => {
           autoplaySpeed={speed}
           pauseOnHover={false}
           afterChange={handleAfterChange}
+          beforeChange={handleBeforeChange}
         >
           {
             slideshow
@@ -56,9 +68,9 @@ const IndexPage = ({ data }) => {
               .map((item) => (
                 <div key={item.slide} interval={item.duration * 1000} data-start={item.start} data-end={item.end}>
                   {
-                  isImage(item.slide)
-                    ? <img src={item.slide} alt="" />
-                    : <video autoplay src={item.slide} />
+                    (isImage(item.slide))
+                      ? <img src={item.slide} alt="" />
+                      : <video autoPlay muted playsInline src={item.slide} onLoadedMetadata={handleMetadata} />
                   }
                 </div>
 
