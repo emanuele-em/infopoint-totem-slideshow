@@ -12,4 +12,8 @@ slideshow:
     start: August 2, 2022 6:10 PM
     end: August 6, 2022 6:10 PM
     slide: /img/3.jpg
+  - duration: 2
+    start: August 7, 2022 6:11 PM
+    end: August 31, 2022 6:11 PM
+    slide: /img/video2.mp4
 ---
