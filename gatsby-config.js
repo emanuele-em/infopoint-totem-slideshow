@@ -65,6 +65,6 @@ module.exports = {
         modulePath: `${__dirname}/src/cms/cms.js`,
       },
     },
-    "gatsby-plugin-offline",
+    "gatsby-plugin-remove-serviceworker"
   ],
 };
