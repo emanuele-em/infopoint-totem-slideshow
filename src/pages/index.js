@@ -55,25 +55,47 @@ const IndexPage = ({ data }) => {
   const [speed, setSpeed] = useState(3000); //initial state here represents the interval for first image.
   const [timestamp, setTimestamp] = useState(Date.now());
   const sliderRef = useRef();
+  const [loop, setLoop] = useState(false);
 
   /* -------------------------------------------------------------------------- */
   const handleAfterChange = (slide) => { 
-    const videoElement = sliderRef.current.innerSlider.list.querySelector(`[data-index="${slide}"]`).querySelector(`video`);
-    if(videoElement != null) {
-      videoElement.play();
-      setSpeed(videoElement.duration*1000);
-    } else{
-      setSpeed(slideshow[slide].duration * 1000);
-    }
+    // const videoElement = sliderRef.current.innerSlider.list.querySelector(`[data-index="${slide}"]`).querySelector(`video`);
+    // if(videoElement != null) {
+    //   videoElement.play();
+    //   setSpeed(videoElement.duration*1000);
+    // } else{
+    //   setSpeed(slideshow[slide].duration * 1000);
+    // }
+    
+    //console.log("la slide corrente e: "+slide);
   };
 
   /* -------------------------------------------------------------------------- */
-  const handleBeforeChange = (slide) => {
-    if (slide === slideshow.length)
+  const handleBeforeChange = (oldSlide, newSlide) => {
+    // console.log("dalla "+oldSlide+" alla "+newSlide);
+    // console.log("oldSlide: "+oldSlide+" newslide vale: "+newSlide+" length vale: "+slideshow.length);
+    
+    const videoElement = sliderRef.current.innerSlider.list.querySelector(`[data-index="${newSlide}"]`).querySelector(`video`);
+    if(videoElement != null) {
+      //console.log('e un video');
+      videoElement.play();
+      videoElement.muted = false;
+      setSpeed(videoElement.duration*1000);
+    } else{
+      //console.log(slideshow[newSlide]);
+      setSpeed(slideshow[newSlide].duration * 1000);
+    } 
+
+    console.log(loop);
+    if (oldSlide === 0 && loop)
+    {
+      //console.log("update");
       setTimestamp(Date.now());
-  }
+      setLoop(false);
+    }
 
-
+    if (oldSlide === 0 && !loop) setLoop(true);
+  };
   return (
     <Layout>
       <div key={timestamp}>
