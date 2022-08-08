@@ -109,7 +109,7 @@ const IndexPage = ({ data }) => {
           arrow={false}
           autoplaySpeed={speed}
           pauseOnHover={false}
-          afterChange={handleAfterChange}
+          // afterChange={handleAfterChange}
           beforeChange={handleBeforeChange}
         >
           {
