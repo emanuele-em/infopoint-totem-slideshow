@@ -7,5 +7,5 @@ slideshow:
   - duration: 2
     start: August 8, 2022 5:39 PM
     end: August 26, 2022 5:39 PM
-    slide: /img/1.jpg
+    slide: /img/2.jpg
 ---
