@@ -51,10 +51,9 @@ function onlyDisplaySlide(slideshow){
 /* -------------------------------------------------------------------------- */
 
 class IndexPage extends React.Component {
-  
   constructor(props){
     super(props);
-    this.slideshow = this.props.data.allMarkdownRemark.edges[0].node.frontmatter.slideshow;
+    this.slideshow = this.props.data.markdownRemark.frontmatter.slideshow;
     this.sliderRef = React.createRef();
     this.state = {
       speed: 3000,
@@ -153,9 +152,7 @@ export default IndexPage
 
 export const pageQuery = graphql`
         query IndexPage {
-          allMarkdownRemark {
-            edges {
-              node {
+          markdownRemark {
                 frontmatter {
                   slideshow {
                     duration
@@ -165,7 +162,5 @@ export const pageQuery = graphql`
                   }
                 }
               }
-            }
           }
-        }
         `;
