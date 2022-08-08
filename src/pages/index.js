@@ -53,9 +53,9 @@ function onlyDisplaySlide(slideshow){
 const IndexPage = ({ data }) => {
   const slideshow = data.allMarkdownRemark.edges[0].node.frontmatter.slideshow;
   const [speed, setSpeed] = useState(3000); //initial state here represents the interval for first image.
-  const [timestamp, setTimestamp] = useState(Date.now());
+  //const [timestamp, setTimestamp] = useState(Date.now());
   const sliderRef = useRef();
-  const [loop, setLoop] = useState(false);
+  //const [loop, setLoop] = useState(false);
 
   /* -------------------------------------------------------------------------- */
   const handleAfterChange = (slide) => { 
@@ -86,20 +86,20 @@ const IndexPage = ({ data }) => {
       setSpeed(slideshow[newSlide].duration * 1000);
     } 
 
-    console.log(loop);
-    if (oldSlide === 0 && loop)
-    {
+    // console.log(loop);
+    // if (oldSlide === 0 && loop)
+    // {
       //console.log("update");
-      window.location.reload();
+      //window.location.reload();
       // setTimestamp(Date.now());
       // setLoop(false);
-    }
+    //}
 
-    if (oldSlide === 0 && !loop) setLoop(true);
+    //if (oldSlide === 0 && !loop) setLoop(true);
   };
   return (
     <Layout>
-      <div key={timestamp}>
+      <div /* key={timestamp} */>
         <Slider
           ref={sliderRef}
           touchMove={false}
@@ -117,7 +117,7 @@ const IndexPage = ({ data }) => {
             .filter(onlyDisplaySlide)
             .map((item) => {
               return (
-                <Slide key={item.slide} interval={/* item.duration */2000 * 1000} data-start={item.start} data-end={item.end}>
+                <Slide key={item.slide} interval={item.duration * 1000} data-start={item.start} data-end={item.end}>
                   {
                     (isImage(item.slide)) ? <img src={item.slide} alt=""/> : <video muted playsInline src={item.slide}/>
                   }
