@@ -107,24 +107,10 @@ class IndexPage extends React.Component {
   };
 
   render() {
+    console.log(this.slideshow);
     return (
       <Layout >
         <div  key={this.state.timestamp}>
-          {
-              this
-              .slideshow
-              .filter(onlyDisplaySlide)
-              .map((item) => {
-                return (
-                  <div key={item.slide+Date.now()} interval={item.duration * 1000} data-start={item.start} data-end={item.end}>
-                    {
-                      (isImage(item.slide)) ? <img src={item.slide} alt=""/> : <video muted playsInline src={item.slide}/>
-                    }
-                  </div>
-                )
-              })
-              
-            }
           <Slider
             ref={this.sliderRef}
             touchMove={false}
@@ -166,7 +152,7 @@ class IndexPage extends React.Component {
 export default IndexPage
 
 export const pageQuery = graphql`
-        query slideShow {
+        query IndexPage {
           allMarkdownRemark {
             edges {
               node {
