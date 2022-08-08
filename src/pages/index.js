@@ -109,7 +109,22 @@ class IndexPage extends React.Component {
   render() {
     return (
       <Layout >
-        <div key={this.state.timestamp} >
+        <div  key={this.state.timestamp}>
+          {
+              this
+              .slideshow
+              .filter(onlyDisplaySlide)
+              .map((item) => {
+                return (
+                  <div key={item.slide} interval={item.duration * 1000} data-start={item.start} data-end={item.end}>
+                    {
+                      (isImage(item.slide)) ? <img src={item.slide} alt=""/> : <video muted playsInline src={item.slide}/>
+                    }
+                  </div>
+                )
+              })
+              
+            }
           <Slider
             ref={this.sliderRef}
             touchMove={false}
