@@ -95,7 +95,7 @@ class IndexPage extends React.Component {
     } 
 
     //console.log(this.state.loop);
-    if (oldSlide === 0 /* && this.state.loop */)
+    if (oldSlide === this.slideshow.length-1 /* && this.state.loop */)
     {
       console.log("update");
       //setTimeout("location.reload(true);",50);
