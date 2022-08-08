@@ -69,8 +69,8 @@ const IndexPage = ({ data }) => {
 
   /* -------------------------------------------------------------------------- */
   const handleBeforeChange = (slide) => {
-    // if (slide === last)
-    //   setTimestamp(Date.now());
+    if (slide === slideshow.length)
+      setTimestamp(Date.now());
   }
 
 
@@ -87,7 +87,7 @@ const IndexPage = ({ data }) => {
           autoplaySpeed={speed}
           pauseOnHover={false}
           afterChange={handleAfterChange}
-          //beforeChange={handleBeforeChange}
+          beforeChange={handleBeforeChange}
         >
           {
             slideshow
