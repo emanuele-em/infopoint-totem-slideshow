@@ -50,15 +50,28 @@ function onlyDisplaySlide(slideshow){
 /*                               main component                               */
 /* -------------------------------------------------------------------------- */
 
-const IndexPage = ({ data }) => {
-  const slideshow = data.allMarkdownRemark.edges[0].node.frontmatter.slideshow;
-  const [speed, setSpeed] = useState(3000); //initial state here represents the interval for first image.
-  // const [timestamp, setTimestamp] = useState(Date.now());
-  const sliderRef = useRef();
-  const [loop, setLoop] = useState(false);
+class IndexPage extends React.Component {
+  
+  constructor(props){
+    super(props);
+    this.slideshow = this.props.data.allMarkdownRemark.edges[0].node.frontmatter.slideshow;
+    this.sliderRef = React.createRef();
+    this.state = {
+      speed: 3000,
+      timestamp: Date.now(),
+      loop: false,
+    };
+  }
+
+  
+  
+  // const [speed, setSpeed] = useState(3000); //initial state here represents the interval for first image.
+  // // const [timestamp, setTimestamp] = useState(Date.now());
+  // const sliderRef = useRef();
+  // const [loop, setLoop] = useState(false);
 
   /* -------------------------------------------------------------------------- */
-  const handleAfterChange = (slide) => { 
+  handleAfterChange(slide) { 
     // const videoElement = sliderRef.current.innerSlider.list.querySelector(`[data-index="${slide}"]`).querySelector(`video`);
     // if(videoElement != null) {
     //   videoElement.play();
@@ -67,69 +80,68 @@ const IndexPage = ({ data }) => {
     //   setSpeed(slideshow[slide].duration * 1000);
     // }
     
-    //console.log("la slide corrente e: "+slide);
   };
 
   /* -------------------------------------------------------------------------- */
-  const handleBeforeChange = (oldSlide, newSlide) => {
-    // console.log("dalla "+oldSlide+" alla "+newSlide);
-    // console.log("oldSlide: "+oldSlide+" newslide vale: "+newSlide+" length vale: "+slideshow.length);
-    
-    const videoElement = sliderRef.current.innerSlider.list.querySelector(`[data-index="${newSlide}"]`).querySelector(`video`);
+  handleBeforeChange(oldSlide, newSlide){
+    const videoElement = this.sliderRef.current.innerSlider.list.querySelector(`[data-index="${newSlide}"]`).querySelector(`video`);
     if(videoElement != null) {
-      //console.log('e un video');
       videoElement.play();
       videoElement.muted = false;
-      setSpeed(videoElement.duration*1000);
+      this.setState({speed: videoElement.duration*1000});
     } else{
       //console.log(slideshow[newSlide]);
-      setSpeed(slideshow[newSlide].duration * 1000);
+      this.setState({speed: this.slideshow[newSlide].duration*1000});
     } 
 
-    console.log(loop);
-    if (oldSlide === 0 && loop)
+    //console.log(this.state.loop);
+    if (oldSlide === 0 /* && this.state.loop */)
     {
       console.log("update");
-      setTimeout("location.reload(true);",50);
-      // setTimestamp(Date.now());
-      setLoop(false);
+      //setTimeout("location.reload(true);",50);
+      this.setState({timestamp: Date.now()});
+      //this.setState({loop: false});
     }
 
-    if (oldSlide === 0 && !loop) setLoop(true);
+    //if (oldSlide === 0 && !this.state.loop) this.setState({loop: true});
   };
-  return (
-    <Layout>
-      <div /* key={timestamp} */>
-        <Slider
-          ref={sliderRef}
-          touchMove={false}
-          dots={false}
-          autoplay={true}
-          infinite={true}
-          arrow={false}
-          autoplaySpeed={speed}
-          pauseOnHover={false}
-          // afterChange={handleAfterChange}
-          beforeChange={handleBeforeChange}
-        >
-          {
-            slideshow
-            .filter(onlyDisplaySlide)
-            .map((item) => {
-              return (
-                <Slide key={item.slide} interval={item.duration * 1000} data-start={item.start} data-end={item.end}>
-                  {
-                    (isImage(item.slide)) ? <img src={item.slide} alt=""/> : <video muted playsInline src={item.slide}/>
-                  }
-                </Slide>
-              )
-            })
-            
-          }
-        </Slider>
-      </div>
-    </Layout>
-  )
+
+  render() {
+    return (
+      <Layout >
+        <div key={this.state.timestamp} >
+          <Slider
+            ref={this.sliderRef}
+            touchMove={false}
+            dots={false}
+            autoplay={true}
+            infinite={true}
+            arrow={false}
+            autoplaySpeed={this.state.speed}
+            pauseOnHover={false}
+            // afterChange={handleAfterChange}
+            beforeChange={(oldSlide, newSlide) => this.handleBeforeChange(oldSlide, newSlide)}
+          >
+            {
+              this
+              .slideshow
+              .filter(onlyDisplaySlide)
+              .map((item) => {
+                return (
+                  <Slide key={item.slide} interval={item.duration * 1000} data-start={item.start} data-end={item.end}>
+                    {
+                      (isImage(item.slide)) ? <img src={item.slide} alt=""/> : <video muted playsInline src={item.slide}/>
+                    }
+                  </Slide>
+                )
+              })
+              
+            }
+          </Slider>
+        </div>
+      </Layout>
+    )
+  }
 }
 
 /* -------------------------------------------------------------------------- */
