@@ -90,8 +90,9 @@ const IndexPage = ({ data }) => {
     if (oldSlide === 0 && loop)
     {
       //console.log("update");
-      setTimestamp(Date.now());
-      setLoop(false);
+      window.location.reload();
+      // setTimestamp(Date.now());
+      // setLoop(false);
     }
 
     if (oldSlide === 0 && !loop) setLoop(true);
