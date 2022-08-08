@@ -12,4 +12,8 @@ slideshow:
     start: August 8, 2022 10:52 AM
     end: August 18, 2022 10:52 AM
     slide: /img/whatsapp-image-2022-04-06-at-09.56.28.jpeg
+  - duration: 2
+    start: August 8, 2022 1:02 PM
+    end: August 16, 2022 1:02 PM
+    slide: /img/dolomites-val-gardena-winteremotions-in-the-dolomites.mp4
 ---
