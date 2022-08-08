@@ -116,7 +116,7 @@ class IndexPage extends React.Component {
               .filter(onlyDisplaySlide)
               .map((item) => {
                 return (
-                  <div key={this.state.timestamp} interval={item.duration * 1000} data-start={item.start} data-end={item.end}>
+                  <div key={item.slide+Date.now()} interval={item.duration * 1000} data-start={item.start} data-end={item.end}>
                     {
                       (isImage(item.slide)) ? <img src={item.slide} alt=""/> : <video muted playsInline src={item.slide}/>
                     }
