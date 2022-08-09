@@ -33,8 +33,7 @@ exports.createPages = ({ actions, graphql }) => {
       return Promise.reject(result.errors)
     }
 
-    const page = result.data.allMarkdownRemark.edges;
-    console.log(page);
+    const page = result.data.allMarkdownRemark.edges[0];
     const slideshow = page.node.frontmatter.slideshow;
     const id = page.node.id;
    
