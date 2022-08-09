@@ -105,13 +105,13 @@ class IndexPage extends React.Component {
     //if (oldSlide === 0 && !this.state.loop) this.setState({loop: true});
   };
 
-  componentDidUpdate(propsPrecedenti) {
-    this.slideshow = this.props.pageContext.slideshow;
-  }
+  // componentDidUpdate(propsPrecedenti) {
+  //   this.slideshow = this.props.pageContext.slideshow;
+  // }
 
   render() {
     
-    console.log(this.slideshow[0]);
+    console.log(this.props.pageContext);
     //console.log(this.props.pageContext.slideshow.filter(onlyDisplaySlide));
     return (
       <Layout >
