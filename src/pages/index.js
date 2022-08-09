@@ -107,6 +107,17 @@ class IndexPage extends React.Component {
 
   render() {
     this.slideshow = this.props.pageContext.slideshow;
+    console.log(
+    this.slideshow.filter(
+      (item) => {
+        for (var key in this) {
+          if (Date.parse(item.start) < Date.now() && Date.parse(item.end) > Date.now())
+            return true;
+        }
+        return false
+        //Date.parse(item.start) < Date.now() && Date.parse(item.end) > Date.now()}
+      }
+    ));
     return (
       <Layout >
         <div  key={this.state.timestamp}>
@@ -122,8 +133,16 @@ class IndexPage extends React.Component {
             beforeChange={(oldSlide, newSlide) => this.handleBeforeChange(oldSlide, newSlide)}
           >
             {
-              this.slideshow.filter(onlyDisplaySlide)
-              .map((item) => {
+              this.slideshow.filter(
+                (item) => {
+                  for (var key in this) {
+                    if (Date.parse(item.start) < Date.now() && Date.parse(item.end) > Date.now())
+                      return true;
+                  }
+                  return false
+                  //Date.parse(item.start) < Date.now() && Date.parse(item.end) > Date.now()}
+                }
+              ).map((item) => {
                 return (
                   <Slide key={item.slide} interval={item.duration * 1000} data-start={item.start} data-end={item.end}>
                     {
