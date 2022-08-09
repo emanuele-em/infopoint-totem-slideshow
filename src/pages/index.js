@@ -86,7 +86,7 @@ class IndexPage extends React.Component {
       const videoElement = this.sliderRef.current.innerSlider.list.querySelector(`[data-index="${newSlide}"]`).querySelector(`video`);
       if(videoElement != null) {
         videoElement.play();
-        videoElement.muted = false;
+        //videoElement.muted = false;
         this.setState({speed: videoElement.duration*1000});
       } else{
         //console.log(slideshow[newSlide]);
