@@ -111,11 +111,12 @@ class IndexPage extends React.Component {
 
   render() {
     
-    console.log(this.props.pageContext.slideshow['0']);
+    //console.log(this.props.pageContext.slideshow[0]);
     //console.log(this.props.pageContext.slideshow.filter(onlyDisplaySlide));
     return (
       <Layout >
         <div  key={this.state.timestamp}>
+        {this.props.pageContext.slideshow && this.props.pageContext.slideshow[0]}
           <Slider
             // ref={this.sliderRef}
             // touchMove={false}
