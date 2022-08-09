@@ -53,7 +53,7 @@ function onlyDisplaySlide(slideshow){
 class IndexPage extends React.Component {
   constructor(props){
     super(props);
-    this.slideshow = this.props.data.markdownRemark.frontmatter.slideshow;
+    this.slideshow = this.props.pageContext.slideshow;
     this.sliderRef = React.createRef();
     this.state = {
       speed: 3000,
