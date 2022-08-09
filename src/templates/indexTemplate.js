@@ -1,4 +1,4 @@
-import React, { useState, useRef } from 'react'
+import React, { useState, useRef, useContext } from 'react'
 import { graphql } from 'gatsby'
 import styled from "styled-components";
 import Layout from "../components/Layout"
@@ -83,13 +83,17 @@ const IndexPage = ({ data, pageContext }) => {
 
     if (oldSlide === slideshow.length - 1 /* && state.loop */) {
       console.log("update");
+      
       setTimestamp(Date.now());
       //setLoop(false);
     }
   };
 
+    
   return (
+    
     <Layout >
+      {console.log(slideshow)}
       <div  key={timestamp}>
         <Slider
         ref={sliderRef}
