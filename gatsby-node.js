@@ -33,14 +33,14 @@ exports.createPages = ({ actions, graphql }) => {
       return Promise.reject(result.errors)
     }
 
-    const page = result.data.allMarkdownRemark.edges[0];
-    const id = page.node.id;
-    const slideshow = page.node.frontmatter.slideshow;
+    const page = result.data.allMarkdownRemark.edges;
+    
    
     //const images = pages.filter(page => Date.parse(page.node.frontmatter.slideshow.start) < Date.now() && Date.parse(page.node.frontmatter.slideshow.end) > Date.now());
   console.log(slideshow);
-   // pages.forEach((edge) => {
-      //const id = edge.node.id
+   pages.forEach((edge) => {
+    const id = edge.node.id;
+    const slideshow = edge.node.frontmatter.slideshow;
       createPage({
         path: page.node.fields.slug,
         component: path.resolve(
@@ -52,7 +52,7 @@ exports.createPages = ({ actions, graphql }) => {
           slideshow
         },
       })
-    //})
+    })
 
   })
 }
