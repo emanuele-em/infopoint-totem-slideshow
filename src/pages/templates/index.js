@@ -108,34 +108,34 @@ class IndexPage extends React.Component {
   render() {
     console.log(this.props);
     this.slideshow = this.props.pageContext.slideshow;
-    console.log(this.slideshow);
+    console.log(this.slideshow.filter(onlyDisplaySlide));
     //console.log(this.props.pageContext.slideshow.filter(onlyDisplaySlide));
     return (
       <Layout >
         <div  key={this.state.timestamp}>
           <Slider
-            ref={this.sliderRef}
-            touchMove={false}
-            dots={false}
-            autoplay={true}
-            infinite={true}
-            arrow={false}
-            autoplaySpeed={this.state.speed}
-            pauseOnHover={false}
-            beforeChange={(oldSlide, newSlide) => this.handleBeforeChange(oldSlide, newSlide)}
+            // ref={this.sliderRef}
+            // touchMove={false}
+            // dots={false}
+            // autoplay={true}
+            // infinite={true}
+            // arrow={false}
+            // autoplaySpeed={this.state.speed}
+            // pauseOnHover={false}
+            // beforeChange={(oldSlide, newSlide) => this.handleBeforeChange(oldSlide, newSlide)}
           >
             {
-              this.slideshow
-              .filter(onlyDisplaySlide)
-              .map((item) => {
-                return (
-                  <Slide key={item.slide} interval={item.duration * 1000} data-start={item.start} data-end={item.end}>
-                    {
-                      (isImage(item.slide)) ? <img src={item.slide} alt=""/> : <video muted playsInline src={item.slide}/>
-                    }
-                  </Slide>
-                )
-              })
+              // this.slideshow
+              // .filter(onlyDisplaySlide)
+              // .map((item) => {
+              //   return (
+              //     <Slide key={item.slide} interval={item.duration * 1000} data-start={item.start} data-end={item.end}>
+              //       {
+              //         (isImage(item.slide)) ? <img src={item.slide} alt=""/> : <video muted playsInline src={item.slide}/>
+              //       }
+              //     </Slide>
+              //   )
+              // })
               
             }
           </Slider>
