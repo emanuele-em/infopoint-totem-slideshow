@@ -53,20 +53,19 @@ function onlyDisplaySlide(slideshow) {
 const IndexPage = ({ data, pageContext }) => {
   const sliderRef = useRef();
   const { slideshow } = pageContext;
-  const { slide } = slideshow[0];
   const [speed, setSpeed] = useState(3000);
   const [timestamp, setTimestamp] = useState(Date.now());
-  const [loop, setLoop] = useState(false);
+  //const [loop, setLoop] = useState(false);
 
   /* -------------------------------------------------------------------------- */
   const handleAfterChange = (slide) => {
-    // const videoElement = sliderRef.current.innerSlider.list.querySelector(`[data-index="${slide}"]`).querySelector(`video`);
-    // if(videoElement != null) {
-    //   videoElement.play();
-    //   setSpeed(videoElement.duration*1000);
-    // } else{
-    //   setSpeed(slideshow[slide].duration * 1000);
-    // }
+    const videoElement = sliderRef.current.innerSlider.list.querySelector(`[data-index="${slide}"]`).querySelector(`video`);
+    if(videoElement != null) {
+      videoElement.play();
+      setSpeed(videoElement.duration*1000);
+    } else{
+      setSpeed(slideshow[slide].duration * 1000);
+    }
 
   };
 
@@ -85,42 +84,36 @@ const IndexPage = ({ data, pageContext }) => {
     if (oldSlide === slideshow.length - 1 /* && state.loop */) {
       console.log("update");
       setTimestamp(Date.now());
-      setLoop(false);
+      //setLoop(false);
     }
   };
-  //console.log(typeof slideshow[0].duration);
 
   return (
     <Layout >
-      <div  /* key={timestamp} */>
-        {
-          (pageContext.slideshow) 
-          ? (pageContext.slideshow[0].duration)
-          : ("ciao")
-        }
+      <div  key={timestamp}>
         <Slider
-        // ref={sliderRef}
-        // touchMove={false}
-        // dots={false}
-        // autoplay={true}
-        // infinite={true}
-        // arrow={false}
-        // autoplaySpeed={state.speed}
-        // pauseOnHover={false}
-        // beforeChange={(oldSlide, newSlide) => handleBeforeChange(oldSlide, newSlide)}
+        ref={sliderRef}
+        touchMove={false}
+        dots={false}
+        autoplay={true}
+        infinite={true}
+        arrow={false}
+        autoplaySpeed={speed}
+        pauseOnHover={false}
+        beforeChange={handleBeforeChange}
         >
           {
-            // slideshow
-            // .filter(onlyDisplaySlide)
-            // .map((item) => {
-            //   return (
-            //     <Slide key={item.slide} interval={item.duration * 1000} data-start={item.start} data-end={item.end}>
-            //       {
-            //         (isImage(item.slide)) ? <img src={item.slide} alt=""/> : <video muted playsInline src={item.slide}/>
-            //       }
-            //     </Slide>
-            //   )
-            // })
+            slideshow
+            .filter(onlyDisplaySlide)
+            .map((item) => {
+              return (
+                <Slide key={item.slide} interval={item.duration * 1000} data-start={item.start} data-end={item.end}>
+                  {
+                    (isImage(item.slide)) ? <img src={item.slide} alt=""/> : <video muted playsInline src={item.slide}/>
+                  }
+                </Slide>
+              )
+            })
 
           }
         </Slider>
