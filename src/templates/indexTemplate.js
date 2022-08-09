@@ -55,7 +55,10 @@ const IndexPage = ({ data, pageContext }) => {
   const { slideshow } = pageContext;
   const [speed, setSpeed] = useState(3000);
   const [timestamp, setTimestamp] = useState(Date.now());
-  //const [loop, setLoop] = useState(false);
+
+  const [, updateState] = React.useState();
+  const forceUpdate = React.useCallback(() => updateState({}), []);
+  // const [loop, setLoop] = useState(false);
 
   /* -------------------------------------------------------------------------- */
   const handleAfterChange = (slide) => {
@@ -83,9 +86,9 @@ const IndexPage = ({ data, pageContext }) => {
 
     if (oldSlide === slideshow.length - 1 /* && state.loop */) {
       console.log("update");
-      
+      forceUpdate;
       setTimestamp(Date.now());
-      //setLoop(false);
+      // setLoop(false);
     }
   };
 
