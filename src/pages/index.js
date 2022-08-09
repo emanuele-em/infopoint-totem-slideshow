@@ -60,7 +60,7 @@ class IndexPage extends React.Component {
       timestamp: Date.now(),
       loop: false,
     };
-  }
+  };
 
   
   
@@ -106,7 +106,7 @@ class IndexPage extends React.Component {
   };
 
   render() {
-    console.log(this.slideshow);
+    console.log(this.props.pageContext.slideshow);
     return (
       <Layout >
         <div  key={this.state.timestamp}>
@@ -143,11 +143,13 @@ class IndexPage extends React.Component {
   }
 }
 
+
+
+export default IndexPage;
+
 /* -------------------------------------------------------------------------- */
 /*                                    query                                   */
 /* -------------------------------------------------------------------------- */
-
-export default IndexPage
 
 export const pageQuery = graphql`
         query IndexPage {

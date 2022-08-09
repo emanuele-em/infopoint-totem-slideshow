@@ -35,9 +35,10 @@ exports.createPages = ({ actions, graphql }) => {
 
     const page = result.data.allMarkdownRemark.edges[0];
     const id = page.node.id;
+    const slideshow = page.node.frontmatter.slideshow;
    
     //const images = pages.filter(page => Date.parse(page.node.frontmatter.slideshow.start) < Date.now() && Date.parse(page.node.frontmatter.slideshow.end) > Date.now());
-
+  console.log(slideshow);
    // pages.forEach((edge) => {
       //const id = edge.node.id
       createPage({
@@ -47,7 +48,8 @@ exports.createPages = ({ actions, graphql }) => {
         ),
         // additional data can be passed via context
         context: {
-          id
+          id,
+          slideshow
         },
       })
     //})
