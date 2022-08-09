@@ -88,7 +88,7 @@ const IndexPage = ({data, pageContext}) => {
       setLoop(false);
     }
   };
-  console.log(slideshow);
+  console.log(slideshow[0]);
 
     return (
       <Layout >
