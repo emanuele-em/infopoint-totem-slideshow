@@ -37,7 +37,7 @@ exports.createPages = ({ actions, graphql }) => {
     
    
     //const images = pages.filter(page => Date.parse(page.node.frontmatter.slideshow.start) < Date.now() && Date.parse(page.node.frontmatter.slideshow.end) > Date.now());
-  console.log(slideshow);
+
    pages.forEach((edge) => {
     const id = edge.node.id;
     const slideshow = edge.node.frontmatter.slideshow;
