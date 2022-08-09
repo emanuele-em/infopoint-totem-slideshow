@@ -114,28 +114,28 @@ class IndexPage extends React.Component {
       <Layout >
         <div  key={this.state.timestamp}>
           <Slider
-            // ref={this.sliderRef}
-            // touchMove={false}
-            // dots={false}
-            // autoplay={true}
-            // infinite={true}
-            // arrow={false}
-            // autoplaySpeed={this.state.speed}
-            // pauseOnHover={false}
-            // beforeChange={(oldSlide, newSlide) => this.handleBeforeChange(oldSlide, newSlide)}
+            ref={this.sliderRef}
+            touchMove={false}
+            dots={false}
+            autoplay={true}
+            infinite={true}
+            arrow={false}
+            autoplaySpeed={this.state.speed}
+            pauseOnHover={false}
+            beforeChange={(oldSlide, newSlide) => this.handleBeforeChange(oldSlide, newSlide)}
           >
             {
-              //this.props.pageContext.slideshow
-              // .filter(onlyDisplaySlide)
-              // .map((item) => {
-              //   return (
-              //     <Slide key={item.slide} interval={item.duration * 1000} data-start={item.start} data-end={item.end}>
-              //       {
-              //         (isImage(item.slide)) ? <img src={item.slide} alt=""/> : <video muted playsInline src={item.slide}/>
-              //       }
-              //     </Slide>
-              //   )
-              // })
+              this.props.pageContext.slideshow
+              .filter(onlyDisplaySlide)
+              .map((item) => {
+                return (
+                  <Slide key={item.slide} interval={item.duration * 1000} data-start={item.start} data-end={item.end}>
+                    {
+                      (isImage(item.slide)) ? <img src={item.slide} alt=""/> : <video muted playsInline src={item.slide}/>
+                    }
+                  </Slide>
+                )
+              })
               
             }
           </Slider>
