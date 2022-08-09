@@ -1,7 +1,7 @@
 import React, { useState, useRef } from 'react'
 import { graphql } from 'gatsby'
 import styled from "styled-components";
-import Layout from "../../components/Layout"
+import Layout from "../components/Layout"
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";

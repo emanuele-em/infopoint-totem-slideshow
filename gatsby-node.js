@@ -65,7 +65,7 @@ exports.createPages = ({ actions, graphql }) => {
     createPage({
       path: page[0].node.fields.slug,
       component: path.resolve(
-        `src/pages/templates/indexTemplate.js`
+        `src/templates/indexTemplate.js`
       ),
       // additional data can be passed via context
       context: {
