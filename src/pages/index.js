@@ -1,4 +1,4 @@
-import React, { useState, useRef } from 'react'
+import React from 'react'
 import { graphql } from 'gatsby'
 import styled from "styled-components";
 import Layout from "../components/Layout"
@@ -107,17 +107,7 @@ class IndexPage extends React.Component {
 
   render() {
     this.slideshow = this.props.pageContext.slideshow;
-    console.log(
-      this.props.pageContext.slideshow.filter(
-      (item) => {
-        for (var key in this) {
-          if (Date.parse(item.start) < Date.now() && Date.parse(item.end) > Date.now())
-            return true;
-        }
-        return false
-        //Date.parse(item.start) < Date.now() && Date.parse(item.end) > Date.now()}
-      }
-    ));
+    console.log(this.props.pageContext.slideshow.filter(onlyDisplaySlide));
     return (
       <Layout >
         <div  key={this.state.timestamp}>
@@ -133,16 +123,9 @@ class IndexPage extends React.Component {
             beforeChange={(oldSlide, newSlide) => this.handleBeforeChange(oldSlide, newSlide)}
           >
             {
-              this.props.pageContext.slideshow.filter(
-                (item) => {
-                  for (var key in this) {
-                    if (Date.parse(item.start) < Date.now() && Date.parse(item.end) > Date.now())
-                      return true;
-                  }
-                  return false
-                  //Date.parse(item.start) < Date.now() && Date.parse(item.end) > Date.now()}
-                }
-              ).map((item) => {
+              this.props.pageContext.slideshow
+              .filter(onlyDisplaySlide)
+              .map((item) => {
                 return (
                   <Slide key={item.slide} interval={item.duration * 1000} data-start={item.start} data-end={item.end}>
                     {
