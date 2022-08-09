@@ -106,7 +106,7 @@ class IndexPage extends React.Component {
   };
 
   render() {
-    console.log(this.props.pageContext.slideshow);
+    this.slideshow = this.props.pageContext.slideshow;
     return (
       <Layout >
         <div  key={this.state.timestamp}>
