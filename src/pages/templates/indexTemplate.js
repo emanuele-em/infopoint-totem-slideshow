@@ -89,11 +89,13 @@ const IndexPage = ({ data, pageContext }) => {
     }
   };
   //console.log(typeof slideshow[0].duration);
-
+  if (pageContext.slideshow) {
+    console.log(pageContext.slideshow[0])
+  }
   return (
     <Layout >
       <div  /* key={timestamp} */>
-        {JSON.stringify(pageContext.slideshow[0])}
+
         <Slider
         // ref={sliderRef}
         // touchMove={false}
