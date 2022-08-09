@@ -53,6 +53,7 @@ function onlyDisplaySlide(slideshow) {
 const IndexPage = ({ data, pageContext }) => {
   const sliderRef = useRef();
   const { slideshow } = pageContext;
+  const { slide } = slideshow[0];
   const [speed, setSpeed] = useState(3000);
   const [timestamp, setTimestamp] = useState(Date.now());
   const [loop, setLoop] = useState(false);
@@ -88,14 +89,11 @@ const IndexPage = ({ data, pageContext }) => {
     }
   };
   //console.log(typeof slideshow[0].duration);
-  //console.log(slideshow);
-  slideshow.forEach((slide) => {
-      console.log(slide);
-  })
+
   return (
     <Layout >
       <div  /* key={timestamp} */>
-        
+        {JSON.stringify(pageContext.slideshow[0])}
         <Slider
         // ref={sliderRef}
         // touchMove={false}
