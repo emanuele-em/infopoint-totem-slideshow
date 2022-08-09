@@ -88,11 +88,12 @@ const IndexPage = ({data, pageContext}) => {
       setLoop(false);
     }
   };
-  console.log(slideshow[0]);
+  //console.log(typeof slideshow[0].duration);
 
     return (
       <Layout >
-        <div  key={timestamp}>
+        <div  /* key={timestamp} */>
+          {typeof slideshow[0].duration}
           <Slider
             // ref={sliderRef}
             // touchMove={false}
