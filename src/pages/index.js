@@ -108,7 +108,7 @@ class IndexPage extends React.Component {
   render() {
     this.slideshow = this.props.pageContext.slideshow;
     console.log(
-    this.slideshow.filter(
+      this.props.pageContext.slideshow.filter(
       (item) => {
         for (var key in this) {
           if (Date.parse(item.start) < Date.now() && Date.parse(item.end) > Date.now())
@@ -133,7 +133,7 @@ class IndexPage extends React.Component {
             beforeChange={(oldSlide, newSlide) => this.handleBeforeChange(oldSlide, newSlide)}
           >
             {
-              this.slideshow.filter(
+              this.props.pageContext.slideshow.filter(
                 (item) => {
                   for (var key in this) {
                     if (Date.parse(item.start) < Date.now() && Date.parse(item.end) > Date.now())
