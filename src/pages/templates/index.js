@@ -108,7 +108,7 @@ class IndexPage extends React.Component {
   render() {
     console.log(this.props);
     this.slideshow = this.props.pageContext.slideshow;
-    console.log(this.slideshow.filter(page => Date.parse(page.start) < Date.now() && Date.parse(page.end) > Date.now()));
+    console.log(this.slideshow[0].start);
     //console.log(this.props.pageContext.slideshow.filter(onlyDisplaySlide));
     return (
       <Layout >
