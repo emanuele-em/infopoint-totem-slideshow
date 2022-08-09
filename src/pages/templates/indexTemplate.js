@@ -94,10 +94,9 @@ const IndexPage = ({ data, pageContext }) => {
     <Layout >
       <div  /* key={timestamp} */>
         {
-          (pageContext.slideshow) ?
-          (
-            console.log(pageContext.slideshow[0])
-          ) : ("ciao")
+          (pageContext.slideshow) 
+          ? (pageContext.slideshow[0].duration)
+          : ("ciao")
         }
         <Slider
         // ref={sliderRef}
