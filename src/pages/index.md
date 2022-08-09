@@ -11,5 +11,5 @@ slideshow:
   - duration: 2
     start: August 9, 2022 9:42 AM
     end: August 31, 2022 9:42 AM
-    slide: /img/image00013.jpeg
+    slide: /img/logo-evolutha.png
 ---
