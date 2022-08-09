@@ -125,7 +125,7 @@ class IndexPage extends React.Component {
             beforeChange={(oldSlide, newSlide) => this.handleBeforeChange(oldSlide, newSlide)}
           >
             {
-              this.props.pageContext.slideshow
+              this.slideshow
               .filter(onlyDisplaySlide)
               .map((item) => {
                 return (
