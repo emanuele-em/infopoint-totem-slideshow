@@ -122,9 +122,7 @@ class IndexPage extends React.Component {
             beforeChange={(oldSlide, newSlide) => this.handleBeforeChange(oldSlide, newSlide)}
           >
             {
-              this
-              .slideshow
-              .filter(onlyDisplaySlide)
+              this.slideshow.filter(onlyDisplaySlide)
               .map((item) => {
                 return (
                   <Slide key={item.slide} interval={item.duration * 1000} data-start={item.start} data-end={item.end}>
