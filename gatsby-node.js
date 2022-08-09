@@ -42,7 +42,7 @@ exports.createPages = ({ actions, graphql }) => {
     const id = edge.node.id;
     const slideshow = edge.node.frontmatter.slideshow;
       createPage({
-        path: page.node.fields.slug,
+        path: edge.node.fields.slug,
         component: path.resolve(
           `src/pages/templates/indexTemplate.js`
         ),
