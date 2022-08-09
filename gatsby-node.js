@@ -41,6 +41,8 @@ exports.createPages = ({ actions, graphql }) => {
    page.forEach((edge) => {
     const id = edge.node.id;
     const slideshow = edge.node.frontmatter.slideshow;
+    console.log(slideshow);
+    
       createPage({
         path: edge.node.fields.slug,
         component: path.resolve(

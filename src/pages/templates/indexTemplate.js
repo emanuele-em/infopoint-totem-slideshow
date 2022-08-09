@@ -88,15 +88,11 @@ const IndexPage = ({ data, pageContext }) => {
     }
   };
   //console.log(typeof slideshow[0].duration);
-  console.log(slideshow);
+  console.log(JSON.stringify(slideshow));
   return (
     <Layout >
       <div  /* key={timestamp} */>
-        {
-          slideshow.map((item) => item.end
-          )
-        }
-        {typeof slideshow}
+        
         <Slider
         // ref={sliderRef}
         // touchMove={false}
