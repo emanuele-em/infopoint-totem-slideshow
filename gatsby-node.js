@@ -43,7 +43,7 @@ exports.createPages = ({ actions, graphql }) => {
         ),
         context: {
           id,
-          slideshow
+          slideshow: slideshow
         },
       })
 
