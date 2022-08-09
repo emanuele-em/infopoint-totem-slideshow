@@ -1,4 +1,4 @@
-import React, {useRef} from 'react'
+import React, {useState, useRef} from 'react'
 import { graphql } from 'gatsby'
 import styled from "styled-components";
 import Layout from "../../components/Layout"
@@ -53,9 +53,9 @@ function onlyDisplaySlide(slideshow){
 const IndexPage = ({data, pageContext}) => {
   const sliderRef = useRef();
   const {slideshow} = pageContext;
-  const [speed, setSpeed] = 3000;
-  const [timestamp, setTimestamp] = Date.now();
-  const [loop, setLoop] = false;
+  const [speed, setSpeed] = useState(3000);
+  const [timestamp, setTimestamp] = useState(Date.now());
+  const [loop, setLoop] = useState(false);
 
   /* -------------------------------------------------------------------------- */
   const handleAfterChange = (slide) => { 
