@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {useRef} from 'react'
 import { graphql } from 'gatsby'
 import styled from "styled-components";
 import Layout from "../../components/Layout"
@@ -50,27 +50,15 @@ function onlyDisplaySlide(slideshow){
 /*                               main component                               */
 /* -------------------------------------------------------------------------- */
 
-class IndexPage extends React.Component {
-  constructor(props){
-    super(props);
-    this.slideshow = this.props.pageContext.slideshow;
-    this.sliderRef = React.createRef();
-    this.state = {
-      speed: 3000,
-      timestamp: Date.now(),
-      loop: false,
-    };
-  };
-
-  
-  
-  // const [speed, setSpeed] = useState(3000); //initial state here represents the interval for first image.
-  // // const [timestamp, setTimestamp] = useState(Date.now());
-  // const sliderRef = useRef();
-  // const [loop, setLoop] = useState(false);
+const IndexPage = ({data, pageContext}) => {
+  const sliderRef = useRef();
+  const {slideshow} = pageContext;
+  const [speed, setSpeed] = 3000;
+  const [timestamp, setTimestamp] = Date.now();
+  const [loop, setLoop] = false;
 
   /* -------------------------------------------------------------------------- */
-  handleAfterChange(slide) { 
+  const handleAfterChange = (slide) => { 
     // const videoElement = sliderRef.current.innerSlider.list.querySelector(`[data-index="${slide}"]`).querySelector(`video`);
     // if(videoElement != null) {
     //   videoElement.play();
@@ -82,54 +70,42 @@ class IndexPage extends React.Component {
   };
 
   /* -------------------------------------------------------------------------- */
-  handleBeforeChange(oldSlide, newSlide){
-      const videoElement = this.sliderRef.current.innerSlider.list.querySelector(`[data-index="${newSlide}"]`).querySelector(`video`);
+  const handleBeforeChange = (oldSlide, newSlide) => {
+      const videoElement = sliderRef.current.innerSlider.list.querySelector(`[data-index="${newSlide}"]`).querySelector(`video`);
       if(videoElement != null) {
         videoElement.play();
         //videoElement.muted = false;
-        this.setState({speed: videoElement.duration*1000});
+        setSpeed(videoElement.duration*1000);
       } else{
         //console.log(slideshow[newSlide]);
-        this.setState({speed: this.slideshow[newSlide].duration*1000});
+        setSpeed(slideshow[newSlide].duration*1000);
       }
 
-    //console.log(this.state.loop);
-    if (oldSlide === this.slideshow.length-1 /* && this.state.loop */)
+    if (oldSlide === slideshow.length-1 /* && state.loop */)
     {
       console.log("update");
-      //setTimeout("location.reload(true);",50);
-      this.setState({timestamp: Date.now()});
-      //this.setState({loop: false});
+      setTimestamp(Date.now());
+      setLoop(false);
     }
-
-    //if (oldSlide === 0 && !this.state.loop) this.setState({loop: true});
   };
+  console.log(slideshow);
 
-  // componentDidUpdate(propsPrecedenti) {
-  //   this.slideshow = this.props.pageContext.slideshow;
-  // }
-
-  render() {
-    
-    //console.log(this.props.pageContext.slideshow[0]);
-    //console.log(this.props.pageContext.slideshow.filter(onlyDisplaySlide));
     return (
       <Layout >
-        <div  key={this.state.timestamp}>
-        {this.props.pageContext.slideshow && this.props.pageContext.slideshow[0]}
+        <div  key={timestamp}>
           <Slider
-            // ref={this.sliderRef}
+            // ref={sliderRef}
             // touchMove={false}
             // dots={false}
             // autoplay={true}
             // infinite={true}
             // arrow={false}
-            // autoplaySpeed={this.state.speed}
+            // autoplaySpeed={state.speed}
             // pauseOnHover={false}
-            // beforeChange={(oldSlide, newSlide) => this.handleBeforeChange(oldSlide, newSlide)}
+            // beforeChange={(oldSlide, newSlide) => handleBeforeChange(oldSlide, newSlide)}
           >
             {
-              // this.slideshow
+              // slideshow
               // .filter(onlyDisplaySlide)
               // .map((item) => {
               //   return (
@@ -147,7 +123,6 @@ class IndexPage extends React.Component {
       </Layout>
     )
   }
-}
 
 
 
