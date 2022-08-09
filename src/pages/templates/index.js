@@ -108,7 +108,7 @@ class IndexPage extends React.Component {
   render() {
     console.log(this.props);
     this.slideshow = this.props.pageContext.slideshow;
-    console.log(this.slideshow.filter(onlyDisplaySlide));
+    console.log(this.slideshow);
     //console.log(this.props.pageContext.slideshow.filter(onlyDisplaySlide));
     return (
       <Layout >
