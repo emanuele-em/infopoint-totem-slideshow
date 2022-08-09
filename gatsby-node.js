@@ -35,8 +35,7 @@ exports.createPages = ({ actions, graphql }) => {
     const page = result.data.allMarkdownRemark.edges[0];
     const id = page.node.id;
     const slideshow = page.node.frontmatter.slideshow;
-   
-  console.log(slideshow);
+  
       createPage({
         path: page.node.fields.slug,
         component: path.resolve(

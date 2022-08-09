@@ -62,21 +62,47 @@ class IndexPage extends React.Component {
     };
   };
 
+  
+  
+  // const [speed, setSpeed] = useState(3000); //initial state here represents the interval for first image.
+  // // const [timestamp, setTimestamp] = useState(Date.now());
+  // const sliderRef = useRef();
+  // const [loop, setLoop] = useState(false);
+
+  /* -------------------------------------------------------------------------- */
+  handleAfterChange(slide) { 
+    // const videoElement = sliderRef.current.innerSlider.list.querySelector(`[data-index="${slide}"]`).querySelector(`video`);
+    // if(videoElement != null) {
+    //   videoElement.play();
+    //   setSpeed(videoElement.duration*1000);
+    // } else{
+    //   setSpeed(slideshow[slide].duration * 1000);
+    // }
+    
+  };
 
   /* -------------------------------------------------------------------------- */
   handleBeforeChange(oldSlide, newSlide){
-    const videoElement = this.sliderRef.current.innerSlider.list.querySelector(`[data-index="${newSlide}"]`).querySelector(`video`);
-    if(videoElement != null) {
-      videoElement.play();
-      videoElement.muted = false;
-      this.setState({speed: videoElement.duration*1000});
-    } else{
-      this.setState({speed: this.slideshow[newSlide].duration*1000});
-    } 
+      const videoElement = this.sliderRef.current.innerSlider.list.querySelector(`[data-index="${newSlide}"]`).querySelector(`video`);
+      if(videoElement != null) {
+        videoElement.play();
+        videoElement.muted = false;
+        this.setState({speed: videoElement.duration*1000});
+      } else{
+        //console.log(slideshow[newSlide]);
+        this.setState({speed: this.slideshow[newSlide].duration*1000});
+      }
 
-    if (oldSlide === this.slideshow.length-1)
+    //console.log(this.state.loop);
+    if (oldSlide === this.slideshow.length-1 /* && this.state.loop */)
+    {
+      console.log("update");
+      //setTimeout("location.reload(true);",50);
       this.setState({timestamp: Date.now()});
+      //this.setState({loop: false});
+    }
 
+    //if (oldSlide === 0 && !this.state.loop) this.setState({loop: true});
   };
 
   render() {
