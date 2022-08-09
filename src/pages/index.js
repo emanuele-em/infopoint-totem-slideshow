@@ -106,6 +106,7 @@ class IndexPage extends React.Component {
   };
 
   render() {
+    console.log(this.slideshow);
     return (
       <Layout >
         <div  key={this.state.timestamp}>
@@ -118,7 +119,6 @@ class IndexPage extends React.Component {
             arrow={false}
             autoplaySpeed={this.state.speed}
             pauseOnHover={false}
-            // afterChange={handleAfterChange}
             beforeChange={(oldSlide, newSlide) => this.handleBeforeChange(oldSlide, newSlide)}
           >
             {
