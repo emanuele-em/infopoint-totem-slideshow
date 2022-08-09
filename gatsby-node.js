@@ -33,30 +33,48 @@ exports.createPages = ({ actions, graphql }) => {
       return Promise.reject(result.errors)
     }
 
+    const allslides = []
+   //let key = 0;
+
     const page = result.data.allMarkdownRemark.edges;
-    
-   
+
+
     //const images = pages.filter(page => Date.parse(page.node.frontmatter.slideshow.start) < Date.now() && Date.parse(page.node.frontmatter.slideshow.end) > Date.now());
 
-   page.forEach((edge) => {
-    const id = edge.node.id;
-    const slideshow = edge.node.frontmatter.slideshow;
-    console.log(slideshow);
-    
-      createPage({
-        path: edge.node.fields.slug,
-        component: path.resolve(
-          `src/pages/templates/indexTemplate.js`
-        ),
-        // additional data can be passed via context
-        context: {
-          id,
-          slideshow
-        },
-      })
+    page.forEach(({ node }) => {
+
+      if (node.frontmatter.slideshow) {
+        node.frontmatter.slideshow.forEach(slide => {
+          //console.log(key)
+          // if (!allslides[key]) {
+          //   allslides[key] = []
+          // }
+          // allslides[key].push(slide)
+          allslides.push(slide);
+          //key = key+1
+        })
+      }
     })
 
+    //const slides = Object.keys(allslides)
+    console.log(allslides);
+    //const id = edge.node.id
+    //const slideshow = edge.node.frontmatter.slideshow;
+    //console.log(slideshow);
+    //console.log(slides.sort());
+    createPage({
+      path: page[0].node.fields.slug,
+      component: path.resolve(
+        `src/pages/templates/indexTemplate.js`
+      ),
+      // additional data can be passed via context
+      context: {
+        //id,
+        slideshow: allslides
+      }
+    })
   })
+
 }
 
 exports.onCreateNode = ({ node, actions, getNode }) => {

@@ -88,7 +88,7 @@ const IndexPage = ({ data, pageContext }) => {
     }
   };
   //console.log(typeof slideshow[0].duration);
-  console.log(JSON.stringify(slideshow));
+  console.log(slideshow);
   return (
     <Layout >
       <div  /* key={timestamp} */>
