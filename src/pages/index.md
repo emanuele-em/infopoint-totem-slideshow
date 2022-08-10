@@ -24,4 +24,12 @@ slideshow:
     start: August 9, 2022 10:40 PM
     end: August 31, 2022 10:40 PM
     slide: /img/welcome-template-design-57920b182c39467989807a66d3b9f740_screen.jpeg
+  - duration: 2
+    start: August 10, 2022 3:01 PM
+    end: August 19, 2022 3:01 PM
+    slide: /img/wear-your-mask-pug-dog-slide-design-template-e41e580c4b9470470c17014618bbb83f_screen.jpeg
+  - duration: 2
+    start: August 10, 2022 3:02 PM
+    end: August 10, 2022 3:02 PM
+    slide: /img/welcome-template-design-57920b182c39467989807a66d3b9f740_screen.jpeg
 ---
