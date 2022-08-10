@@ -1,6 +1,10 @@
 ---
 slideshow:
   - duration: 2
+    start: August 10, 2022 2:22 PM
+    end: August 25, 2022 2:22 PM
+    slide: /img/dolomites-val-gardena-winteremotions-in-the-dolomites.mp4
+  - duration: 2
     start: August 9, 2022 10:39 PM
     end: August 27, 2022 10:39 PM
     slide: /img/bowling-digital-display-template-design-e6b8dc3e2cd61775f537a11f9274af26_screen.jpeg
