@@ -130,7 +130,6 @@ const IndexPage = ({ data, pageContext }) => {
 }
 
 
-
 export default IndexPage;
 
 /* -------------------------------------------------------------------------- */
