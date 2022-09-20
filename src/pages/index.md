@@ -1,14 +1,6 @@
 ---
 slideshow:
   - duration: 3
-    start: August 11, 2022 9:50 AM
-    end: September 30, 2022 9:50 AM
-    slide: /img/mountain-christmas-natale-in-montagna-a-selva-di-val-gardena-bergweihnacht-in-wolkenstein.mp4
-  - duration: 3
-    start: August 11, 2022 9:51 AM
-    end: September 30, 2022 9:51 AM
-    slide: /img/dolomites-val-gardena-winteremotions-in-the-dolomites.mp4
-  - duration: 3
     start: August 10, 2022 5:12 PM
     end: September 30, 2022 5:12 PM
     slide: /img/1080x600-slide1.jpg
@@ -16,6 +8,14 @@ slideshow:
     start: August 10, 2022 5:11 PM
     end: September 30, 2022 5:11 PM
     slide: /img/1080x600-slide2.jpg
+  - duration: 3
+    start: August 11, 2022 9:50 AM
+    end: September 30, 2022 9:50 AM
+    slide: /img/mountain-christmas-natale-in-montagna-a-selva-di-val-gardena-bergweihnacht-in-wolkenstein.mp4
+  - duration: 3
+    start: August 11, 2022 9:51 AM
+    end: September 30, 2022 9:51 AM
+    slide: /img/dolomites-val-gardena-winteremotions-in-the-dolomites.mp4
   - duration: 3
     start: August 10, 2022 5:11 PM
     end: September 30, 2022 5:11 PM
