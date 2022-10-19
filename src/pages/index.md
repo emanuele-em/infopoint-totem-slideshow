@@ -40,4 +40,8 @@ slideshow:
     start: October 19, 2022 8:48 AM
     end: October 28, 2022 8:48 AM
     slide: https://youtu.be/gz5vqfMO9J4
+  - duration: 2
+    start: October 19, 2022 8:57 AM
+    end: January 6, 2023 8:57 AM
+    slide: https://www.christmasvalley.it/mountain-christmas/
 ---
