@@ -10,7 +10,7 @@ slideshow:
     slide: /img/dolomites-val-gardena-winteremotions-in-the-dolomites.mp4
   - duration: 3
     start: October 24, 2022 4:37 PM
-    end: December 1, 2022 4:37 PM
+    end: November 2, 2022 6:37 PM
     slide: /img/vorlage-infoscreen1.jpg
   - duration: 2
     start: October 24, 2022 4:50 PM
