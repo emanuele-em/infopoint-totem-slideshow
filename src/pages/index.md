@@ -1,9 +1,5 @@
 ---
 slideshow:
-  - duration: 3
-    start: October 24, 2022 4:37 PM
-    end: November 2, 2022 6:37 PM
-    slide: /img/vorlage-infoscreen1.jpg
   - duration: 2
     start: October 26, 2022 11:38 AM
     end: November 19, 2022 11:38 AM
