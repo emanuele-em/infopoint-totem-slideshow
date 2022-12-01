@@ -1,10 +1,6 @@
 ---
 slideshow:
   - duration: 2
-    start: October 26, 2022 11:38 AM
-    end: November 19, 2022 11:38 AM
-    slide: /img/burning-dolomites-autumn-in-val-gardena.mp4
-  - duration: 2
     start: October 24, 2022 4:49 PM
     end: April 15, 2023 4:49 PM
     slide: /img/dolomites-val-gardena-winteremotions-in-the-dolomites.mp4
