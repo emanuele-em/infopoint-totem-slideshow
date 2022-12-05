@@ -12,8 +12,4 @@ slideshow:
     start: October 25, 2022 5:37 PM
     end: April 15, 2023 5:37 PM
     slide: /img/val-gardena-an-eldorado-for-cross-country-skiers.mp4
-  - duration: 2
-    start: December 1, 2022 9:12 AM
-    end: April 11, 2023 9:12 AM
-    slide: /img/winteralle_v002.mp4
 ---
