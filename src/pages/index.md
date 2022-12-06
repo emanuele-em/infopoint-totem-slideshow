@@ -15,4 +15,5 @@ slideshow:
   - duration: 2
     start: December 6, 2022 10:10 AM
     end: December 31, 2022 10:10 AM
+    slide: /img/winteralle_v002-compress2.mp4
 ---
