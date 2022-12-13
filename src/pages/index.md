@@ -16,4 +16,8 @@ slideshow:
     start: December 6, 2022 1:39 PM
     end: December 31, 2022 1:39 PM
     slide: /img/avent-sun-pana.jpeg
+  - duration: 2
+    start: December 26, 2022 11:04 AM
+    end: January 6, 2023 6:04 PM
+    slide: /img/sci-di-fondo-al-chiaro-di-luna.jpg
 ---
