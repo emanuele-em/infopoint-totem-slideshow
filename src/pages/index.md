@@ -15,5 +15,5 @@ slideshow:
   - duration: 2
     start: December 6, 2022 1:39 PM
     end: December 31, 2022 1:39 PM
-    slide: /img/mobilità-sostenibile-in-val-gardena.mp4
+    slide: /img/avent-sun-pana.jpg
 ---
