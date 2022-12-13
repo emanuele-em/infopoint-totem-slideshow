@@ -36,4 +36,8 @@ slideshow:
     start: December 22, 2022 11:08 AM
     end: February 15, 2023 11:08 AM
     slide: /img/pattinaggio.jpg
+  - duration: 2
+    start: December 13, 2022 11:45 AM
+    end: April 11, 2023 11:45 AM
+    slide: /img/vorlage-infoscreen5.jpg
 ---
