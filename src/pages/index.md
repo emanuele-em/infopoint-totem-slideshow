@@ -19,15 +19,15 @@ slideshow:
   - duration: 2
     start: December 13, 2022 11:05 AM
     end: March 31, 2023 11:05 AM
-    slide: /img/fondo-monte-pana.jpg
+    slide: /img/vorlage-infoscreen9.jpg
   - duration: 2
     start: December 26, 2022 11:04 AM
     end: January 6, 2023 6:04 PM
-    slide: /img/sci-di-fondo-al-chiaro-di-luna.jpg
+    slide: /img/vollmondlanglauf.jpg
   - duration: 2
     start: December 13, 2022 11:07 AM
     end: April 8, 2023 11:07 AM
-    slide: /img/vga.jpg
+    slide: /img/active-2.jpg
   - duration: 2
     start: December 24, 2022 11:07 AM
     end: January 1, 2023 4:07 PM
