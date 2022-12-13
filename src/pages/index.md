@@ -32,4 +32,8 @@ slideshow:
     start: December 24, 2022 11:07 AM
     end: January 1, 2023 4:07 PM
     slide: /img/fiaccolata-scuola-sci.jpg
+  - duration: 2
+    start: December 22, 2022 11:08 AM
+    end: February 15, 2023 11:08 AM
+    slide: /img/pattinaggio.jpg
 ---
