@@ -39,5 +39,5 @@ slideshow:
   - duration: 2
     start: December 13, 2022 11:45 AM
     end: April 11, 2023 11:45 AM
-    slide: /img/vorlage-infoscreen5.jpg
+    slide: /img/active1.jpg
 ---
