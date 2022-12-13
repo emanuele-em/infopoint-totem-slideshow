@@ -3,7 +3,7 @@ slideshow:
   - duration: 2
     start: December 6, 2022 1:39 PM
     end: December 31, 2022 1:39 PM
-    slide: /img/avent-sun-pana.jpeg
+    slide: /img/avent-sun-pana.jpg
   - duration: 2
     start: October 24, 2022 4:49 PM
     end: April 15, 2023 4:49 PM
@@ -35,7 +35,7 @@ slideshow:
   - duration: 2
     start: December 22, 2022 11:08 AM
     end: February 15, 2023 11:08 AM
-    slide: /img/pattinaggio.jpg
+    slide: /img/eislaufen.jpg
   - duration: 2
     start: December 13, 2022 11:45 AM
     end: April 11, 2023 11:45 AM
