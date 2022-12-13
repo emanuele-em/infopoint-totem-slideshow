@@ -28,4 +28,8 @@ slideshow:
     start: December 13, 2022 11:07 AM
     end: April 8, 2023 11:07 AM
     slide: /img/vga.jpg
+  - duration: 2
+    start: December 24, 2022 11:07 AM
+    end: January 1, 2023 4:07 PM
+    slide: /img/fiaccolata-scuola-sci.jpg
 ---
