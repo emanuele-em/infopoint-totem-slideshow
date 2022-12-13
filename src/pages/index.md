@@ -44,4 +44,8 @@ slideshow:
     start: December 13, 2022 3:05 PM
     end: April 11, 2023 3:05 PM
     slide: /img/active3.jpg
+  - duration: 2
+    start: December 13, 2022 3:05 PM
+    end: April 11, 2023 3:05 PM
+    slide: /img/active1.jpg
 ---
