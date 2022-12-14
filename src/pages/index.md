@@ -4,7 +4,7 @@ slideshow:
     start: December 6, 2022 1:39 PM
     end: December 18, 2022 2:39 PM
     slide: /img/avent-sun-pana.jpg
-  - duration: 20
+  - duration: 15
     start: December 13, 2022 3:05 PM
     end: April 11, 2023 3:05 PM
     slide: /img/active1.jpg
@@ -24,7 +24,7 @@ slideshow:
     start: October 25, 2022 5:37 PM
     end: April 15, 2023 5:37 PM
     slide: /img/val-gardena-an-eldorado-for-cross-country-skiers.mp4
-  - duration: 20
+  - duration: 15
     start: December 13, 2022 3:05 PM
     end: April 11, 2023 3:05 PM
     slide: /img/active3.jpg
@@ -32,15 +32,15 @@ slideshow:
     start: December 13, 2022 11:05 AM
     end: March 31, 2023 11:05 AM
     slide: /img/vorlage-infoscreen9.jpg
-  - duration: 20
+  - duration: 15
     start: December 13, 2022 11:45 AM
     end: April 11, 2023 11:45 AM
     slide: /img/active4.jpg
-  - duration: 20
+  - duration: 19
     start: December 26, 2022 11:04 AM
     end: January 6, 2023 6:04 PM
     slide: /img/vollmondlanglauf.jpg
-  - duration: 20
+  - duration: 15
     start: December 13, 2022 11:07 AM
     end: April 8, 2023 11:07 AM
     slide: /img/active-2.jpg
