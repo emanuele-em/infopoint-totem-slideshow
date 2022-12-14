@@ -60,4 +60,8 @@ slideshow:
     start: April 16, 2023 2:24 PM
     end: October 31, 2023 2:24 PM
     slide: /img/respect_sommer.jpg
+  - duration: 20
+    start: December 14, 2022 2:24 PM
+    end: April 15, 2023 2:24 PM
+    slide: /img/app.jpg
 ---
