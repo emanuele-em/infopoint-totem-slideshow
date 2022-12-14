@@ -12,6 +12,10 @@ slideshow:
     start: December 13, 2022 3:06 PM
     end: December 17, 2022 3:06 PM
     slide: /img/world-cup.jpg
+  - duration: 15
+    start: December 13, 2022 11:07 AM
+    end: April 8, 2023 11:07 AM
+    slide: /img/active-2.jpg
   - duration: 2
     start: October 24, 2022 4:49 PM
     end: April 15, 2023 4:49 PM
@@ -40,10 +44,6 @@ slideshow:
     start: December 26, 2022 11:04 AM
     end: January 6, 2023 6:04 PM
     slide: /img/vollmondlanglauf.jpg
-  - duration: 15
-    start: December 13, 2022 11:07 AM
-    end: April 8, 2023 11:07 AM
-    slide: /img/active-2.jpg
   - duration: 20
     start: December 24, 2022 11:07 AM
     end: January 1, 2023 4:07 PM
