@@ -2,7 +2,7 @@
 slideshow:
   - duration: 20
     start: December 6, 2022 1:39 PM
-    end: December 31, 2022 1:39 PM
+    end: December 18, 2022 2:39 PM
     slide: /img/avent-sun-pana.jpg
   - duration: 20
     start: December 13, 2022 3:05 PM
