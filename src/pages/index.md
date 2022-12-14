@@ -52,4 +52,12 @@ slideshow:
     start: December 22, 2022 11:08 AM
     end: February 15, 2023 11:08 AM
     slide: /img/eislaufen.jpg
+  - duration: 15
+    start: December 14, 2022 2:22 PM
+    end: April 15, 2023 2:22 PM
+    slide: /img/respect_winter.jpg
+  - duration: 15
+    start: April 16, 2023 2:24 PM
+    end: October 31, 2023 2:24 PM
+    slide: /img/respect_sommer.jpg
 ---
