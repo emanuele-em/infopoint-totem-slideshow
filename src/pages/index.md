@@ -1,9 +1,9 @@
 ---
 slideshow:
   - duration: 20
-    start: December 6, 2022 1:39 PM
-    end: December 18, 2022 2:39 PM
-    slide: /img/avent-sun-pana.jpg
+    start: January 2, 2023 1:39 PM
+    end: January 11, 2023 2:39 PM
+    slide: /img/galaxienbeobachtung.jpg
   - duration: 15
     start: December 13, 2022 3:05 PM
     end: April 11, 2023 3:05 PM
