@@ -50,7 +50,7 @@ slideshow:
     slide: /img/fiaccolata.jpg
   - duration: 20
     start: December 22, 2022 11:08 AM
-    end: February 15, 2023 11:08 AM
+    end: January 1, 2023 11:08 AM
     slide: /img/eislaufen.jpg
   - duration: 15
     start: December 14, 2022 2:22 PM
